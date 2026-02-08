@@ -58,25 +58,25 @@ test {
 }
 
 
-task positive_test(type: Test) {
+task Positive_test(type: Test) {
     useJUnitPlatform {
         includeTags("Positive")
     }
 }
 
-task negative_test(type: Test) {
+task Negative_test(type: Test) {
     useJUnitPlatform {
         includeTags("Negative")
     }
 }
 
-task regressive_test(type: Test) {
+task Regressive_test(type: Test) {
     useJUnitPlatform {
         includeTags("Regressive")
     }
 }
 
-task all_test(type: Test) {
+task All_test(type: Test) {
     useJUnitPlatform {
         includeTags("All")
     }
