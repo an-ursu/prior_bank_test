@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Главная страница PriorBank")
 @Feature("Логотип")
 @DisplayName("Тесты по логотипу")
-@Tag("All")
+@Tag("logo")
 public class MainPageLogoTest extends TestBase {
 
     MainPage mainPage = new MainPage();

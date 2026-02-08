@@ -15,7 +15,7 @@ import static io.qameta.allure.Allure.step;
 @Epic("Главная страница PriorBank")
 @Feature("Категории услуг")
 @DisplayName("Тесты категорий на главной странице")
-@Tag("All")
+@Tag("categories")
 public class MainPageCategoriesTest extends TestBase {
 
     MainPage mainPage = new MainPage();
