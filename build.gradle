@@ -70,9 +70,9 @@ task Negative_test(type: Test) {
     }
 }
 
-task Regressive_test(type: Test) {
+task Regression_test(type: Test) {
     useJUnitPlatform {
-        includeTags("Regressive")
+        includeTags("Regression")
     }
 }
 
