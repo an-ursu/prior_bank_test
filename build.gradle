@@ -57,9 +57,6 @@ test {
     useJUnitPlatform()
 }
 
-test {
-    useJUnitPlatform()
-}
 
 task positive_test(type: Test) {
     useJUnitPlatform {
@@ -73,7 +70,7 @@ task negative_test(type: Test) {
     }
 }
 
-task all_test(type: Test) {
+task regressive_test(type: Test) {
     useJUnitPlatform {
         includeTags("Regressive")
     }
@@ -85,7 +82,7 @@ task all_test(type: Test) {
     }
 }
 
-task all_test(type: Test) {
+task web_test(type: Test) {
     useJUnitPlatform {
         includeTags("web")
     }
