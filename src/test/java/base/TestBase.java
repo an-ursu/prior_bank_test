@@ -9,6 +9,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -29,11 +32,24 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("BROWSER_SIZE", "1920x1080");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object> of(
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true,
                 "enableFileUploads", true
         ));
+        HashMap<String, Object> chromeOptions = new HashMap<>();
+        chromeOptions.put("args", Arrays.asList(
+                "--disable-blink-features=AutomationControlled",
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+                "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+        ));
+
+        chromeOptions.put("excludeSwitches", Collections.singletonList("enable-automation"));
+
+        capabilities.setCapability("goog:chromeOptions", chromeOptions);
+
         Configuration.browserCapabilities = capabilities;
 
     }
