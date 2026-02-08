@@ -19,19 +19,17 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.baseUrl = "https://www.priorbank.by";
-        Configuration.timeout = 30000;
-        Configuration.pageLoadTimeout = 60000;
+        //Configuration.timeout = 30000;
+        //Configuration.pageLoadTimeout = 60000;
         Configuration.remote = System.getProperty("remote");
-        //Configuration.pageLoadStrategy = "eager";
-        //Configuration.browserSize = "1920x1080";
-        //Configuration.browser = "chrome";
+        Configuration.pageLoadStrategy = "eager";
 
         Configuration.browser = System.getProperty("BROWSER", "chrome");
         Configuration.browserVersion = System.getProperty("BROWSER_VERSION", "128.0");
         Configuration.browserSize = System.getProperty("BROWSER_SIZE", "1920x1080");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.of(
+        capabilities.setCapability("selenoid:options", Map.<String, Object> of(
                 "enableVNC", true,
                 "enableVideo", true,
                 "enableFileUploads", true
