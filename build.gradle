@@ -36,14 +36,6 @@ dependencies {
 tasks.withType(Test) {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-    systemProperties = [
-            'selenide.browser': 'chrome',
-            'selenide.baseUrl': 'https://www.priorbank.by',
-            'selenide.headless': System.getProperty('selenide.headless', 'false'),
-            'selenide.timeout': '15000',
-            'selenide.pageLoadTimeout': '30000',
-            'selenide.pageLoadStrategy': 'normal'
-    ]
 
     testLogging {
         lifecycle {
