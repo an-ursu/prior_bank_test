@@ -37,20 +37,20 @@ public class TestBase {
                 "enableFileUploads", true
         ));
 
-        capabilities.setCapability("browserName", "chrome");
-
-        HashMap<String, Object> chromeOptions = new HashMap<>();
-        chromeOptions.put("args", Arrays.asList(
-                "--disable-blink-features=AutomationControlled",
-                "--no-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-gpu",
-                "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-        ));
-
-        chromeOptions.put("excludeSwitches", Collections.singletonList("enable-automation"));
-
-        capabilities.setCapability("goog:chromeOptions", chromeOptions);
+//        capabilities.setCapability("browserName", "chrome");
+//
+//        HashMap<String, Object> chromeOptions = new HashMap<>();
+//        chromeOptions.put("args", Arrays.asList(
+//                "--disable-blink-features=AutomationControlled",
+//                "--no-sandbox",
+//                "--disable-dev-shm-usage",
+//                "--disable-gpu",
+//                "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+//        ));
+//
+//        chromeOptions.put("excludeSwitches", Collections.singletonList("enable-automation"));
+//
+//        capabilities.setCapability("goog:chromeOptions", chromeOptions);
         Configuration.browserCapabilities = capabilities;
 
     }
