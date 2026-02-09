@@ -35,7 +35,7 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
-    //systemProperties(System.getProperties())
+    systemProperties(System.getProperties())
     systemProperties = [
             'selenide.browser': 'chrome',
             'selenide.baseUrl': 'https://www.priorbank.by',

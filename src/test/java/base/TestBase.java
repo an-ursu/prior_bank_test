@@ -22,8 +22,6 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.baseUrl = "https://www.priorbank.by";
-        //Configuration.timeout = 30000;
-        //Configuration.pageLoadTimeout = 60000;
         Configuration.remote = System.getProperty("remote");
         Configuration.pageLoadStrategy = "eager";
 
@@ -31,12 +29,16 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("BROWSER_VERSION", "128.0");
         Configuration.browserSize = System.getProperty("BROWSER_SIZE", "1920x1080");
 
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true,
                 "enableFileUploads", true
         ));
+
+        capabilities.setCapability("browserName", "chrome");
+
         HashMap<String, Object> chromeOptions = new HashMap<>();
         chromeOptions.put("args", Arrays.asList(
                 "--disable-blink-features=AutomationControlled",
@@ -49,7 +51,6 @@ public class TestBase {
         chromeOptions.put("excludeSwitches", Collections.singletonList("enable-automation"));
 
         capabilities.setCapability("goog:chromeOptions", chromeOptions);
-
         Configuration.browserCapabilities = capabilities;
 
     }
