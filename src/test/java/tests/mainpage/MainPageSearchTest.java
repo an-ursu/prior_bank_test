@@ -1,6 +1,7 @@
 package tests.mainpage;
 
 
+import base.TestBase;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +17,7 @@ import static io.qameta.allure.Allure.step;
 @Feature("Поиск по сайту")
 @DisplayName("Тесты по поиску с главной страницы")
 @Tag("search")
-public class MainPageSearchTest {
+public class MainPageSearchTest extends TestBase {
 
     MainPage mainPage = new MainPage();
     SearchPage searchPage = new SearchPage();
