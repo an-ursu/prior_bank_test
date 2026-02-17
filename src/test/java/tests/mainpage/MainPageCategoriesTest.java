@@ -7,7 +7,8 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
+import pages.main.CategoriesPage;
+import pages.main.MainPage;
 import testdata.CategoriesData;
 
 import static io.qameta.allure.Allure.step;
@@ -19,6 +20,7 @@ import static io.qameta.allure.Allure.step;
 public class MainPageCategoriesTest extends TestBase {
 
     MainPage mainPage = new MainPage();
+    CategoriesPage categoriesPage = new CategoriesPage();
 
     @Test
     @DisplayName("На главной странице отображаются основные категории услуг")
@@ -32,7 +34,7 @@ public class MainPageCategoriesTest extends TestBase {
         });
 
         step("Проверить отображение основных категорий услуг на главной странице", () -> {
-            mainPage.categories.shouldHaveVisibleCategory(
+            categoriesPage.shouldHaveVisibleCategory(
                     CategoriesData.MAIN_VISIBLE_CATEGORIES);
         });
     }
@@ -47,8 +49,8 @@ public class MainPageCategoriesTest extends TestBase {
             mainPage.openPage();
         });
 
-        step("Проверить отображение кнопки 'Еще'", () ->{
-            mainPage.categories.shouldHaveMoreButton();
+        step("Проверить отображение кнопки 'Еще'", () -> {
+            categoriesPage.shouldHaveMoreButton();
         });
     }
 
@@ -65,7 +67,7 @@ public class MainPageCategoriesTest extends TestBase {
         });
 
         step("Открыть выпадающее меню", () -> {
-            mainPage.categories
+            categoriesPage
                     .shouldHaveMoreButton()
                     .clickMoreButton()
                     .shouldShowDropdown();
@@ -73,7 +75,7 @@ public class MainPageCategoriesTest extends TestBase {
         });
 
         step("Проверить отображение категорий услуг в выпадающем списке", () -> {
-            mainPage.categories.shouldHaveDropdownCategory(
+            categoriesPage.shouldHaveDropdownCategory(
                     CategoriesData.DROPDOWN_CATEGORIES);
         });
     }
@@ -89,7 +91,7 @@ public class MainPageCategoriesTest extends TestBase {
         });
 
         step("Проверить отображение основных категорий услуг на главной странице", () -> {
-            mainPage.categories.shouldHaveVisibleCategory(
+            categoriesPage.shouldHaveVisibleCategory(
                     CategoriesData.ALL_CATEGORIES);
         });
     }

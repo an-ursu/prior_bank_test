@@ -6,7 +6,8 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
+import pages.main.LogoPage;
+import pages.main.MainPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -17,6 +18,7 @@ import static io.qameta.allure.Allure.step;
 public class MainPageLogoTest extends TestBase {
 
     MainPage mainPage = new MainPage();
+    LogoPage logoPage = new LogoPage();
 
     @Test
     @DisplayName("Логотип банка должен отображаться на главной странице")
@@ -29,7 +31,7 @@ public class MainPageLogoTest extends TestBase {
         });
 
         step("Check logo on main page", () -> {
-            mainPage.checkLogo();
+            logoPage.checkLogo();
         });
     }
 
