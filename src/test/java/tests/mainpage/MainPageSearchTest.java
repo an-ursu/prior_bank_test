@@ -42,9 +42,8 @@ public class MainPageSearchTest extends TestBase {
 
 
     @Test
-    @DisplayName("На главной странице отображаются основные категории услуг")
+    @DisplayName("На главной странице отображается строка поиска")
     @Tag("web")
-    @Tag("Positive")
     void searchInputShouldBeVisibleOnMainPage() {
 
         step("Открыть страницу", () -> {
@@ -95,7 +94,7 @@ public class MainPageSearchTest extends TestBase {
             searchPage.clickSearchButton();
         });
 
-        step("", () -> {
+        step("Проверить отображение подсказки в поле ввода", () -> {
             searchPage.searchPlaceholderShouldHaveText(searchData.placeholderText);
         });
 

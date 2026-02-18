@@ -2,20 +2,19 @@ package pages.main;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchPage {
 
     private SelenideElement searchButton = $(".button__search"),
-            searchInput = $("#itIsForm"),
+            searchInput = $("#searchTopFieldRus"),
             searchSelectList = $(".search-portlet__tooltips-container"),
             searchPlaceholder = $("#searchTopFieldRus"),
             searchClose = $(".search__close-icon-i");
 
     public SearchPage searchButtonShouldBeVisible() {
-        searchInput.shouldBe(visible);
+        searchButton.shouldBe(visible);
         return this;
     }
 
@@ -36,13 +35,13 @@ public class SearchPage {
 
 
     public SearchPage searchPlaceholderShouldBeVisible() {
-        searchPlaceholder.shouldBe(visible);
+        searchInput.shouldBe(visible);
         return this;
     }
 
 
     public SearchPage searchPlaceholderShouldHaveText(String value) {
-        searchPlaceholder.shouldHave(text(value));
+        searchInput.shouldHave(attribute("placeholder",value));
         return this;
     }
 

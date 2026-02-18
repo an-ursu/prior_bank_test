@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.main.LogoPage;
 import pages.main.MainPage;
-
 import static io.qameta.allure.Allure.step;
 
 @Epic("Главная страница PriorBank")
