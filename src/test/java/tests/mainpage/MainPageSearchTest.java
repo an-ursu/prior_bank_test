@@ -25,7 +25,7 @@ public class MainPageSearchTest extends TestBase {
 
 
     @Test
-    @DisplayName("На главной странице отображаются кнопка поиска")
+    @DisplayName("На главной странице отображается кнопка поиска")
     @Tag("web")
     @Tag("Positive")
     void searchButtonShouldBeVisibleOnMainPage() {
@@ -75,7 +75,7 @@ public class MainPageSearchTest extends TestBase {
             searchPage.clickSearchButton();
         });
 
-        step("", () -> {
+        step("Проверить отображение подсказки в строке поиска", () -> {
             searchPage.searchPlaceholderShouldBeVisible();
         });
     }
