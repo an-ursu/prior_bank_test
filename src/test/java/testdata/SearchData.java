@@ -9,8 +9,6 @@ public class SearchData {
     Faker faker = new Faker(new Locale("ru"));
 
     public String searchCredit;
-    public String searchCard;
-    public String searchBankBranch;
     public String placeholderText;
 
 

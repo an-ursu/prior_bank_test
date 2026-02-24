@@ -1,7 +1,8 @@
-package pages.main;
+package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -20,11 +21,7 @@ public class CategoriesPage {
     private SelenideElement moreButton = $("#more");
     private SelenideElement moreDropdown = $(".more-items-content-wrapper");
 
-    public CategoriesPage shouldBeVisible() {
-        container.shouldBe(visible);
-        return this;
-    }
-
+    @Step("Проверяем отображение категорий")
     public CategoriesPage shouldHaveVisibleCategory(List<String> categories) {
         categories.forEach(
                 category ->
@@ -32,6 +29,7 @@ public class CategoriesPage {
         return this;
     }
 
+    @Step("Проверяем отображение в выпадающем списке категорий")
     public CategoriesPage shouldHaveDropdownCategory(List<String> categories) {
         clickMoreButton();
         moreDropdown.shouldBe(visible);
@@ -43,22 +41,20 @@ public class CategoriesPage {
         return this;
     }
 
-    public CategoriesPage shouldHaveMoreButton() {
+    @Step("Проверяем отображение кнопки")
+    public CategoriesPage shouldHaveMoreButton(String value) {
         moreButton.shouldBe(visible)
-                .shouldHave(text("Еще"));
+                .shouldHave(text(value));
         return this;
     }
 
+    @Step("Нажимаем на кнопку")
     public CategoriesPage clickMoreButton() {
         moreButton.click();
         return this;
     }
 
-    public CategoriesPage hoverMoreButton() {
-        moreButton.hover();
-        return this;
-    }
-
+    @Step("Проверяем видимость выпадающего списка")
     public CategoriesPage shouldShowDropdown() {
         moreDropdown.shouldBe(visible);
         return this;
